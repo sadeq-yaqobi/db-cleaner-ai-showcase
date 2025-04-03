@@ -8,10 +8,12 @@
         let base = document.createElement("base");
         base.href = window.location.hostname.includes("github.io") 
                     ? "/db-cleaner-ai-showcase/" 
-                    : "";
+                    : "/";
         document.head.appendChild(base);
       })();
     </script>
+    <base href="/db-cleaner-ai-showcase/">
+
     <title>DB Cleaner AI Documentation</title>
     <!-- Custom styles -->
     <link rel="stylesheet" href="/assets/css/style.css" />
