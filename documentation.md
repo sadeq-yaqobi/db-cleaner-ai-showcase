@@ -1,0 +1,849 @@
+---
+layout: page
+title: Documentation
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DB Cleaner AI Documentation</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- Custom styles -->
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="ai-main-header">
+      <div class="ai-header-container">
+        <a href="index.md" class="ai-header-logo">
+          <img src="/assets/img/logo.svg" alt="DB Cleaner AI Logo" />
+          <span class="ai-header-logo-text">DB Cleaner AI</span>
+        </a>
+        <nav class="ai-header-nav">
+          <a href="index.md">Home</a>
+          <a href="documentation.md" class="active">Documentation</a>
+          <a href="faq.md">FAQ</a>
+          <a href="#" class="ai-buy-btn">Buy Now</a>
+        </nav>
+      </div>
+    </header>
+    <button class="ai-mobile-nav-toggle" id="navToggle">
+      <img src="assets/img/menu.svg" alt="menu icon" />
+    </button>
+
+    <aside class="ai-sidebar" id="sidebar">
+      <nav class="ai-nav">
+        <ul>
+          <li><a href="#introduction" class="active">Introduction</a></li>
+          <li class="has-children">
+            <a href="#getting-started">Getting Started</a>
+            <ul>
+              <li><a href="#installation">Installation</a></li>
+              <li><a href="#configuration">Configuration</a></li>
+              <li><a href="#api-connection">API Connection</a></li>
+            </ul>
+          </li>
+          <li class="has-children">
+            <a href="#main-features">Main Features</a>
+            <ul>
+              <li><a href="#dashboard-overview">Dashboard Overview</a></li>
+              <li><a href="#table-analysis">Table Analysis</a></li>
+              <li><a href="#table-actions">Table Actions</a></li>
+              <li><a href="#ai-models">AI Models</a></li>
+              <li><a href="#logs-and-history">Logs and History</a></li>
+            </ul>
+          </li>
+          <li class="has-children">
+            <a href="#technical-details">Technical Details</a>
+            <ul>
+              <li><a href="#database-tables">Database Tables</a></li>
+              <li><a href="#ai-analysis-process">AI Analysis Process</a></li>
+              <li><a href="#security-measures">Security Measures</a></li>
+            </ul>
+          </li>
+          <li class="has-children">
+            <a href="#advanced-usage">Advanced Usage</a>
+            <ul>
+              <li>
+                <a href="#working-with-large-databases"
+                  >Working with Large Databases</a
+                >
+              </li>
+              <li>
+                <a href="#understanding-analysis-results"
+                  >Understanding Analysis Results</a
+                >
+              </li>
+              <li><a href="#bulk-operations">Bulk Operations</a></li>
+            </ul>
+          </li>
+          <li class="has-children">
+            <a href="#troubleshooting">Troubleshooting</a>
+            <ul>
+              <li><a href="#common-issues">Common Issues</a></li>
+              <li><a href="#error-messages">Error Messages</a></li>
+              <li><a href="#contact-support">Contact Support</a></li>
+            </ul>
+          </li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#glossary">Glossary</a></li>
+          <li><a href="#version-history">Version History</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="ai-content">
+      <header class="ai-header">
+        <h1>Documentation</h1>
+        <p>
+          A comprehensive guide to using the WordPress plugin for database
+          management
+        </p>
+      </header>
+
+      <section>
+        <h2 id="introduction">Introduction</h2>
+
+        <p>
+          DB Cleaner AI is a WordPress plugin designed to help administrators
+          analyze and safely clean up unused database tables. Using AI-powered
+          analysis, the plugin identifies which plugin created each table,
+          determines if it's safe to remove, and provides an intuitive interface
+          for managing your WordPress database.
+        </p>
+
+        <div class="ai-feature-card">
+          <h3>Key Benefits</h3>
+          <ul>
+            <li>Reduce database bloat and improve performance</li>
+            <li>Identify orphaned tables from uninstalled plugins</li>
+            <li>Make informed decisions about table deletion</li>
+            <li>Keep detailed logs of all analysis and cleanup operations</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="getting-started">
+        <h2>Getting Started</h2>
+
+        <div id="installation">
+          <h3>Installation</h3>
+
+          <h4>Upload Method</h4>
+          <ol>
+            <li>Download the plugin ZIP file</li>
+            <li>Go to WordPress Admin → Plugins → Add New</li>
+            <li>Click "Upload Plugin" and select the ZIP file</li>
+            <li>Click "Install Now" and then "Activate"</li>
+          </ol>
+
+          <h4>WordPress Repository Method</h4>
+          <ol>
+            <li>Go to WordPress Admin → Plugins → Add New</li>
+            <li>Search for "DB Cleaner AI"</li>
+            <li>Click "Install Now" and then "Activate"</li>
+          </ol>
+        </div>
+
+        <div id="configuration">
+          <h3>Configuration</h3>
+          <p>
+            After activation, you'll need to configure the plugin before first
+            use:
+          </p>
+
+          <ol>
+            <li>
+              Go to <strong>WordPress Admin → DB Cleaner AI → Settings</strong>
+            </li>
+            <li>
+              Set up your AI analysis preferences:
+              <ul>
+                <li>Select your preferred AI model</li>
+                <li>Enter your API key</li>
+                <li>Configure analysis settings</li>
+              </ul>
+            </li>
+            <li>Click "Save Changes"</li>
+          </ol>
+        </div>
+
+        <div id="api-connection">
+          <h3>API Connection</h3>
+          <p>
+            DB Cleaner AI requires a Hugging Face API key to perform AI
+            analysis:
+          </p>
+
+          <ol>
+            <li>
+              Create a
+              <a href="https://huggingface.co/join" target="_blank"
+                >Hugging Face account</a
+              >
+            </li>
+            <li>
+              Generate an API key at
+              <a href="https://huggingface.co/settings/tokens" target="_blank"
+                >https://huggingface.co/settings/tokens</a
+              >
+            </li>
+            <li>Copy the API key to the plugin settings</li>
+            <li>Use the "Test Connection" button to verify it works</li>
+          </ol>
+
+          <div class="ai-img-container">
+            <figure>
+              <img
+                src="/assets/img/settings.png"
+                alt="API Settings Configuration"
+              />
+              <figcaption>API Settings Configuration Screen</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="main-features">
+        <h2>Main Features</h2>
+
+        <div id="dashboard-overview">
+          <h3>Dashboard Overview</h3>
+          <p>
+            The main dashboard provides a comprehensive view of your database
+            status:
+          </p>
+
+          <div class="ai-feature-card">
+            <h4>Cleanup Summary</h4>
+            <p>Visual representation of database composition</p>
+            <ul>
+              <li>Total number of tables</li>
+              <li>Table types (WordPress Core, Plugins, Unknown)</li>
+              <li>Space saved through cleanup</li>
+            </ul>
+          </div>
+
+          <div class="ai-feature-card">
+            <h4>Database Tables List</h4>
+            <p>Complete inventory of tables with details</p>
+            <ul>
+              <li>Table name</li>
+              <li>Size (in MB)</li>
+              <li>Number of rows</li>
+              <li>Creation/modification dates</li>
+            </ul>
+          </div>
+
+          <div class="ai-img-container">
+            <figure>
+              <img
+                src="/assets/img/before-anlysis.png"
+                alt="Dashboard Overview"
+              />
+              <figcaption>Dashboard Overview before analysis</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div id="table-analysis">
+          <h3>Table Analysis</h3>
+          <p>The AI-powered table analysis is the core feature:</p>
+
+          <ol>
+            <li>
+              <strong>Selection</strong>: Choose tables to analyze using
+              checkboxes
+            </li>
+            <li>
+              <strong>Analysis</strong>: Click "Analyze with AI" to start the
+              process
+            </li>
+            <li>
+              <strong>Results</strong>: Review detailed information for each
+              table
+              <ul>
+                <li>Plugin attribution (which plugin created the table)</li>
+                <li>Safety assessment (safe to delete or not)</li>
+                <li>Table purpose description</li>
+                <li>Recommended action</li>
+              </ul>
+            </li>
+          </ol>
+
+          <div class="ai-img-container">
+            <figure>
+              <img
+                src="/assets/img/after-anlysis.png"
+                alt="Table Analysis Results"
+              />
+              <figcaption>Table Analysis Results after processing</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div id="table-actions">
+          <h3>Table Actions</h3>
+          <p>For each analyzed table, you can perform several actions:</p>
+
+          <ul>
+            <li>
+              <strong>View Structure</strong>: Examine the table's columns,
+              types, and keys
+            </li>
+            <li>
+              <strong>Delete Table</strong>: Permanently remove the table (with
+              confirmation)
+            </li>
+            <li>
+              <strong>Sort/Filter</strong>: Organize tables by various
+              attributes
+            </li>
+          </ul>
+
+          <div class="ai-img-container">
+            <figure>
+              <img
+                src="/assets/img/table-structure-modal.png"
+                alt="Table Structure Modal"
+              />
+              <figcaption>Table Structure Modal view</figcaption>
+            </figure>
+          </div>
+
+          <div class="ai-img-container">
+            <figure>
+              <img
+                src="/assets/img/delete-table-confirmation.png"
+                alt="Delete Confirmation"
+              />
+              <figcaption>Delete Table Confirmation dialog</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div id="ai-models">
+          <h3>AI Models</h3>
+          <p>
+            The plugin supports multiple AI models with different capabilities:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Description</th>
+                <th>Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mixtral-8x7B-Instruct</strong> (Default)</td>
+                <td>Balanced performance and accuracy</td>
+                <td>General use</td>
+              </tr>
+              <tr>
+                <td><strong>Gemma-2-2B</strong></td>
+                <td>Faster analysis for smaller sites</td>
+                <td>Small sites</td>
+              </tr>
+              <tr>
+                <td><strong>Qwen2.5-Coder-32B-Instruct</strong></td>
+                <td>Enhanced coding knowledge</td>
+                <td>Complex tables</td>
+              </tr>
+              <tr>
+                <td><strong>Mistral-7B-Instruct</strong></td>
+                <td>Good general performance</td>
+                <td>Medium sites</td>
+              </tr>
+              <tr>
+                <td><strong>Phi-4</strong></td>
+                <td>Optimized for efficiency</td>
+                <td>Quick analysis</td>
+              </tr>
+              <tr>
+                <td><strong>Llama-3.1-8B</strong></td>
+                <td>Strong reasoning capabilities</td>
+                <td>Detailed analysis</td>
+              </tr>
+              <tr>
+                <td><strong>DeepSeek-1.5B</strong></td>
+                <td>Lightweight option</td>
+                <td>Limited resources</td>
+              </tr>
+              <tr>
+                <td><strong>SmallThinker-3B-Preview</strong></td>
+                <td>Experimental model</td>
+                <td>Testing</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Each model has different strengths and speed characteristics. The
+            default Mixtral model works well for most sites, but you can choose
+            others based on your specific needs.
+          </p>
+        </div>
+
+        <div id="logs-and-history">
+          <h3>Logs and History</h3>
+          <p>DB Cleaner AI maintains detailed logs of all operations:</p>
+
+          <div class="ai-feature-card">
+            <h4>API Request Logs</h4>
+            <p>Records of all AI analysis requests</p>
+            <ul>
+              <li>Model used</li>
+              <li>Request time</li>
+              <li>Tables analyzed</li>
+              <li>Response data</li>
+            </ul>
+          </div>
+
+          <div class="ai-feature-card">
+            <h4>Deletion Logs</h4>
+            <p>History of all table deletions</p>
+            <ul>
+              <li>Table name</li>
+              <li>Size and row count</li>
+              <li>Deletion time</li>
+              <li>Status and result</li>
+            </ul>
+          </div>
+
+          <div class="ai-img-container">
+            <figure>
+              <img src="/assets/img/logs.png" alt="Logs View" />
+              <figcaption>Logs overview screen</figcaption>
+            </figure>
+          </div>
+
+          <div class="ai-img-container">
+            <figure>
+              <img
+                src="/assets/img/logs-request-modal.png"
+                alt="Request Log Detail"
+              />
+              <figcaption>Request Log Detail modal</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="technical-details">
+        <h2>Technical Details</h2>
+
+        <div id="database-tables">
+          <h3>Database Tables</h3>
+          <p>
+            The plugin creates two custom tables in your WordPress database:
+          </p>
+
+          <ol>
+            <li>
+              <code>{prefix}db_cleaner_ai_api_logs</code>: Stores API analysis
+              requests
+              <ul>
+                <li>Contains request data, responses, and metadata</li>
+              </ul>
+            </li>
+            <li>
+              <code>{prefix}db_cleaner_ai_deletion_logs</code>: Records table
+              deletion operations
+              <ul>
+                <li>Tracks all deletion attempts with results</li>
+              </ul>
+            </li>
+          </ol>
+
+          <div class="ai-alert ai-alert-info">
+            <p>
+              <strong>Note:</strong> These tables are essential for the plugin's
+              operation and are marked as undeletable.
+            </p>
+          </div>
+        </div>
+
+        <div id="ai-analysis-process">
+          <h3>AI Analysis Process</h3>
+          <p>Here's how the AI analysis works behind the scenes:</p>
+
+          <ol>
+            <li>
+              <strong>Data Collection</strong>: The plugin gathers table names
+              and structure information
+              <ul>
+                <li>Table names (with prefixes removed for privacy)</li>
+                <li>Column definitions (names, types, keys)</li>
+                <li>No actual table data is collected</li>
+              </ul>
+            </li>
+            <li>
+              <strong>AI Processing</strong>: The selected model analyzes the
+              structure data
+              <ul>
+                <li>
+                  Identifies patterns matching known plugin table structures
+                </li>
+                <li>Evaluates relationships between tables</li>
+                <li>Determines table purpose and usage</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Result Interpretation</strong>: The plugin processes and
+              displays the AI's assessment
+              <ul>
+                <li>Maps results to specific plugins when possible</li>
+                <li>
+                  Applies safety rules and recommendations by border color
+                </li>
+                <li>Formats information for display</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div id="security-measures">
+          <h3>Security Measures</h3>
+          <p>DB Cleaner AI employs multiple security measures:</p>
+
+          <ul>
+            <li>
+              <strong>Data Privacy</strong>: Only table structure is sent to AI
+              services, never actual data
+            </li>
+            <li>
+              <strong>API Security</strong>: Your API key is stored securely
+              using WordPress standards
+            </li>
+            <li>
+              <strong>Deletion Protection</strong>: Core WordPress tables are
+              protected from deletion
+            </li>
+            <li>
+              <strong>User Permissions</strong>: Only administrators can access
+              plugin features
+            </li>
+            <li>
+              <strong>Confirmation Steps</strong>: Multi-step confirmation for
+              destructive actions
+            </li>
+            <li>
+              <strong>Detailed Logging</strong>: All operations are logged for
+              accountability
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="advanced-usage">
+        <h2>Advanced Usage</h2>
+
+        <div id="working-with-large-databases">
+          <h3>Working with Large Databases</h3>
+          <p>For databases with many tables (50+):</p>
+
+          <ol>
+            <li>
+              <strong>Batch Processing</strong>: Analyze tables in smaller
+              batches (10-15 at a time)
+            </li>
+            <li>
+              <strong>Selective Analysis</strong>: Focus on unknown or suspected
+              orphaned tables first
+            </li>
+            <li>
+              <strong>Model Selection</strong>: Choose faster models like
+              Gemma-2-2B for initial screening
+            </li>
+          </ol>
+
+          <div class="ai-alert ai-alert-warning">
+            <p>
+              <strong>Tip:</strong> For very large databases, consider running
+              analyses during off-peak hours to minimize impact on site
+              performance.
+            </p>
+          </div>
+        </div>
+
+        <div id="understanding-analysis-results">
+          <h3>Understanding Analysis Results</h3>
+          <p>
+            The analysis provides several indicators to help you make decisions:
+          </p>
+
+          <h4>Border Colors</h4>
+          <ul>
+            <li>
+              <span style="color: var(--ai-danger)"><strong>Red</strong></span
+              >: Critical tables (WordPress core or essential plugin tables)
+            </li>
+            <li>
+              <span style="color: var(--ai-warning)"
+                ><strong>Yellow</strong></span
+              >: Caution advised (plugin may still be active)
+            </li>
+            <li>
+              <span style="color: var(--ai-success)"
+                ><strong>Green</strong></span
+              >: Likely safe to delete (orphaned tables)
+            </li>
+          </ul>
+
+          <h4>Confidence Ratings</h4>
+          <ul>
+            <li>
+              <strong>High</strong>: AI is very confident in its assessment
+            </li>
+            <li>
+              <strong>Medium</strong>: Reasonable confidence, but verify
+              manually
+            </li>
+            <li>
+              <strong>Low</strong>: Take extra caution and investigate further
+            </li>
+          </ul>
+        </div>
+
+        <div id="bulk-operations">
+          <h3>Bulk Operations</h3>
+          <p>For efficient database management:</p>
+
+          <ol>
+            <li>Use checkboxes to select multiple tables</li>
+            <li>Apply analysis to all selected tables at once</li>
+            <li>Review results carefully before taking action</li>
+            <li>Consider database backups before bulk deletions</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="troubleshooting">
+        <h2>Troubleshooting</h2>
+
+        <div id="common-issues">
+          <h3>Common Issues</h3>
+
+          <div class="ai-feature-card">
+            <h4>API Connection Failures</h4>
+            <ul>
+              <li>Verify your API key is correct</li>
+              <li>Check your internet connection</li>
+              <li>Ensure the Hugging Face service is online</li>
+              <li>Try a different AI model</li>
+              <li>Check out your bill</li>
+            </ul>
+          </div>
+
+          <div class="ai-feature-card">
+            <h4>Slow or Incomplete Analysis</h4>
+            <ul>
+              <li>Reduce the number of tables analyzed at once</li>
+              <li>Choose a smaller/faster AI model</li>
+              <li>Check your server resources</li>
+              <li>Increase PHP memory limit if possible</li>
+            </ul>
+          </div>
+
+          <div class="ai-feature-card">
+            <h4>Tables Not Loading</h4>
+            <ul>
+              <li>Refresh the page</li>
+              <li>Check browser console for errors</li>
+              <li>Verify WordPress database connection</li>
+              <li>Check for plugin conflicts</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="error-messages">
+          <h3>Error Messages</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Error Message</th>
+                <th>Possible Cause</th>
+                <th>Solution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"API Key Invalid"</td>
+                <td>Incorrect or expired API key</td>
+                <td>Verify or regenerate your Hugging Face API key</td>
+              </tr>
+              <tr>
+                <td>"Analysis Timeout"</td>
+                <td>Server or API timeout</td>
+                <td>Analyze fewer tables, check server resources</td>
+              </tr>
+              <tr>
+                <td>"Permission Denied"</td>
+                <td>Insufficient user permissions</td>
+                <td>Login as administrator</td>
+              </tr>
+              <tr>
+                <td>"Table Not Found"</td>
+                <td>Table was deleted or renamed</td>
+                <td>Refresh the table list</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="contact-support">
+          <h3>Contact Support</h3>
+          <p>If you encounter persistent issues:</p>
+
+          <ul>
+            <li>
+              Email:
+              <a href="mailto:sadeq.yaqobi9219@gmail.com"
+                >sadeq.yaqobi9219@gmail.com</a
+              >
+            </li>
+            <li>
+              Include your WordPress version, PHP version, and plugin logs
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ</h2>
+        <p>
+          See our comprehensive <a href="FAQ.md">FAQ section</a> for answers to
+          common questions.
+        </p>
+      </section>
+
+      <section id="glossary">
+        <h2>Glossary</h2>
+        <ul>
+          <li>
+            <strong>AI Analysis</strong>: Process of using artificial
+            intelligence to evaluate database tables
+          </li>
+          <li>
+            <strong>Orphaned Table</strong>: Database table left behind by an
+            uninstalled plugin
+          </li>
+          <li>
+            <strong>Table Structure</strong>: The schema definition of a
+            database table (columns, types, keys)
+          </li>
+          <li>
+            <strong>WordPress Core Table</strong>: Default tables created by
+            WordPress installation
+          </li>
+          <li>
+            <strong>Plugin Table</strong>: Custom tables created by WordPress
+            plugins
+          </li>
+        </ul>
+      </section>
+
+      <section id="version-history">
+        <h2>Version History</h2>
+        <ul>
+          <li><strong>1.0.0</strong>: Initial release</li>
+        </ul>
+      </section>
+    </main>
+    <!-- Footer Section -->
+    <footer class="ai-main-footer">
+      <div class="ai-footer-container">
+        <div class="ai-footer-brand">
+          <div class="ai-footer-logo">
+            <img src="assets/img/logo.svg" alt="DB Cleaner AI Logo" />
+            <span class="ai-footer-logo-text">DB Cleaner AI</span>
+          </div>
+          <p class="ai-footer-tagline">
+            Intelligent WordPress database optimization
+          </p>
+        </div>
+
+        <div class="ai-footer-links">
+          <div class="ai-footer-links-column">
+            <h3 style="margin-top: 0;">Product</h3>
+            <ul>
+              <li><a href="">Buy Now</a></li>
+              <li><a href="">Pricing</a></li>
+            </ul>
+          </div>
+
+          <div class="ai-footer-links-column">
+            <h3 style="margin-top: 0;">Resources</h3>
+            <ul>
+              <li><a href="documentation.md">Documentation</a></li>
+              <li><a href="faq.md">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-footer-bottom">
+        <div class="ai-footer-legal">
+          <span>&copy; 2025 DB Cleaner AI. All rights reserved.</span>
+          <div class="ai-footer-legal-links">
+            <a href="https://github.com/sadeq-yaqobi" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#dcdcdc"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-github"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                ></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/sadeq-yaqobi" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#dcdcdc"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-linkedin"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <nav class="ai-header-nav-sticky ai-hidden"> 
+      <a href="/">Home</a>
+      <a href="/documentation" class="active-sticky">Documentation</a> 
+      <a href="/FAQ">FAQ</a>
+      <a href="#" class="ai-buy-btn-sticky">Buy Now</a> 
+    </nav>
+
+    <!-- jQuery CDN (latest stable version) -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

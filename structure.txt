@@ -1,0 +1,27 @@
+.
+|-- assets
+|   |-- css
+|   |   `-- style.css
+|   |-- img
+|   |   |-- after-anlysis.png
+|   |   |-- before-anlysis.png
+|   |   |-- deactivation-modal.png
+|   |   |-- delete-table-confirmation.png
+|   |   |-- first-modal-warning.png
+|   |   |-- github.svg
+|   |   |-- linkedin.svg
+|   |   |-- logo-256.svg
+|   |   |-- logo.svg
+|   |   |-- logs-deletion.png
+|   |   |-- logs-request-modal.png
+|   |   |-- logs.png
+|   |   |-- menu.svg
+|   |   |-- settings-accardion-open-not-test.png
+|   |   |-- settings.png
+|   |   `-- table-structure-modal.png
+|   `-- js
+|       `-- main.js
+|-- document.html
+`-- structure.txt
+
+4 directories, 20 files
