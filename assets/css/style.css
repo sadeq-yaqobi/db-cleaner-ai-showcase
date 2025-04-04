@@ -988,13 +988,13 @@ ul.ai-list-check li:before {
 
 .ai-footer-bottom {
  margin: 0px auto 0px 300px;
-  padding-top: 1.5rem;
+  padding: 1.5rem 2rem 0 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .ai-footer-legal {
   max-width: 1200px;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1094,3 +1094,5 @@ ul.ai-list-check li:before {
     border-radius: 6px;
     margin-right: 10px;
   }
+
+

@@ -1,12 +1,18 @@
+let isIndex = window.location.pathname === "/" || window.location.pathname.includes("index.html");
+
 jQuery(document).ready(function($) {
     // Function to handle responsive display changes
     function updateResponsiveDisplay() {
         if ($(window).width() < 960) {
             $(".ai-header-nav-sticky").css({"display": "flex"});
             $(".ai-header-nav").css({"display": "none"});
+            if(!isIndex){
+                $(".ai-main-footer").css({"margin-bottom": "65px"})
+            }
         } else {
             $(".ai-header-nav-sticky").css({"display": "none"});
             $(".ai-header-nav").css({"display": "flex"});
+            $(".ai-main-footer").css({"margin-bottom": "0"})
             // Reset mobile menu state when switching to desktop
             $('#sidebar').removeClass('active');
         }
@@ -122,3 +128,4 @@ jQuery(document).ready(function($) {
         $(window).trigger('scroll');
     }, 100);
 });
+
