@@ -20,6 +20,7 @@
   --ai-dark: #0f172a; /* Deeper dark for better readability */
   --ai-disabled: #e2e8f0; /* Slightly darker for better visibility */
   --ai-bg-footer:#1e233b;
+  --ai--neutral-light:#e6e6fa;
 
   /* Additional colors */
   --ai-border: #e2e8f0; /* Border color */
@@ -711,6 +712,9 @@ ul.ai-list-check li:before {
     transform: translateY(0);
   }
 }
+.ai-marketplace-logos a svg{
+  fill: var(--ai-dark);
+}
 
 /* Dark mode (optional) */
 @media (prefers-color-scheme: dark) {
@@ -720,6 +724,10 @@ ul.ai-list-check li:before {
     --ai-border: #334155; /* Darker border */
     --ai-text-muted: #94a3b8; /* Lighter muted text */
     --ai-hover: rgba(79, 70, 229, 0.15); /* Darker hover */
+  }
+
+  .ai-marketplace-logos svg{
+    fill: var(--ai-dark);
   }
 
   body {
@@ -746,7 +754,6 @@ ul.ai-list-check li:before {
     background-color: rgba(0, 0, 0, 0.7);
   }
 }
-
 /* Add JS toggle functionality script at the end */
 .ai-search {
   margin: 0 25px 20px;
