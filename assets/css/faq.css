@@ -1,0 +1,22 @@
+/* FAQ Specific Styles */
+.ai-faq-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--ai-border);
+  }
+  
+  .ai-faq-item h3 {
+    color: var(--ai-primary);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .ai-faq-item p, 
+  .ai-faq-item ul, 
+  .ai-faq-item ol {
+    margin-bottom: 0.8rem;
+  }
+  
+  .ai-faq-item:last-child {
+    border-bottom: none;
+  }

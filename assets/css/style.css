@@ -1,3 +1,6 @@
+
+@import url("faq.css");
+
 :root {
   /* Enhanced color palette with improved contrast and cohesion */
   --ai-primary: #4f46e5; /* Deeper indigo for better contrast */
@@ -5,9 +8,7 @@
   --ai-accent: #0891b2; /* Deeper cyan for better readability */
   --ai-gradient-start: #4f46e5;
   --ai-gradient-end: #8b5cf6;
-  #FFCD00
-  #FFDA44
-  #7ed0ec
+
 
   /* More vibrant semantic colors */
   --ai-success: #059669; /* Emerald green - more accessible */
@@ -227,7 +228,7 @@ code {
 
 pre {
   background-color: var(--ai-dark);
-  color: #f8fafc;
+  color: var(--ai-light);
   padding: 20px;
   border-radius: 10px;
   overflow-x: auto;
@@ -627,7 +628,7 @@ ul.ai-list-check li:before {
   color: white;
 }
 .ai-buy-btn{
-  border: 1px solid var(--ai-dark);
+  border: 1px solid white;
   border-radius: 8px;
   padding: 0.5rem 0.8rem!important;
   transition: all 0.2s ease;

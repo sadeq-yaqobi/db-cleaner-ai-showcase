@@ -1,11 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>FAQ</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        let base = document.createElement("base");
+        base.href = window.location.hostname.includes("github.io") 
+                    ? "/db-cleaner-ai-showcase/" 
+                    : "/";
+        document.head.appendChild(base);
+      })();
+    </script>
+
+    <title>DB Cleaner AI - Frequently Asked Questions</title>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="ai-main-header">
+      <div class="ai-header-container">
+        <a href="index.html" class="ai-header-logo">
+          <img src="assets/img/logo.svg" alt="DB Cleaner AI Logo" />
+          <span class="ai-header-logo-text">DB Cleaner AI</span>
+        </a>
+        <nav class="ai-header-nav">
+          <a href="index.html">Home</a>
+          <a href="documentation.html">Documentation</a>
+          <a href="faq.html" class="active">FAQ</a>
+          <a href="#" class="ai-buy-btn">Buy Now</a>
+        </nav>
+      </div>
+    </header>
+    <button class="ai-mobile-nav-toggle" id="navToggle">
+      <img src="assets/img/menu.svg" alt="menu icon" />
+    </button>
+
+    <aside class="ai-sidebar" id="sidebar">
+      <nav class="ai-nav">
+        <ul>
+          <li><a href="#general-questions">General Questions</a></li>
+          <li><a href="#setup-and-configuration">Setup and Configuration</a></li>
+          <li><a href="#ai-analysis">AI Analysis</a></li>
+          <li><a href="#security-and-privacy">Security and Privacy</a></li>
+          <li><a href="#table-management">Table Management</a></li>
+          <li><a href="#troubleshooting">Troubleshooting</a></li>
+          <li><a href="#technical-questions">Technical Questions</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="ai-content">
+      <header class="ai-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>
+          Find answers to common questions about DB Cleaner AI
+        </p>
+      </header>
+
+      <section id="general-questions">
+        <h2>General Questions</h2>
+
+        <div class="ai-faq-item">
+          <h3>What is DB Cleaner AI?</h3>
+          <p>DB Cleaner AI is a WordPress plugin that uses artificial intelligence to analyze your database tables, identify which plugin created them, and help you safely remove unnecessary tables to optimize your database.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>How does DB Cleaner AI help my WordPress site?</h3>
+          <p>The plugin helps improve database performance and reduce bloat by identifying and removing unused or orphaned tables left behind by uninstalled plugins. This can lead to faster database queries, reduced backup sizes, and better overall site performance.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Is DB Cleaner AI compatible with my WordPress version?</h3>
+          <p>DB Cleaner AI is compatible with WordPress 5.0 and above. We recommend always using the latest version of WordPress for optimal security and performance.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Is this plugin free or premium?</h3>
+          <p>DB Cleaner AI is a premium WordPress plugin that requires purchase before use. All features described in this documentation are included in the purchased version of the plugin. There is no free version available at this time.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Can I use DB Cleaner AI on multisite installations?</h3>
+          <p>No, DB Cleaner AI doesn't support WordPress multisite installations.</p>
+        </div>
+      </section>
+
+      <section id="setup-and-configuration">
+        <h2>Setup and Configuration</h2>
+
+        <div class="ai-faq-item">
+          <h3>How do I get a Hugging Face API key?</h3>
+          <ol>
+            <li>Create an account at <a href="https://huggingface.co/join" target="_blank">Hugging Face</a></li>
+            <li>Navigate to your profile settings at <a href="https://huggingface.co/settings/tokens" target="_blank">https://huggingface.co/settings/tokens</a></li>
+            <li>Generate a new API token (Read access is sufficient)</li>
+            <li>Copy this token and paste it into DB Cleaner AI settings</li>
+          </ol>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Which AI model should I choose?</h3>
+          <p>We recommend starting with the default <strong>Mixtral-8x7B-Instruct</strong> model, which offers a good balance of accuracy and performance. If you're experiencing slow analysis times, you can switch to a smaller model like <strong>Gemma-2-2B</strong> or <strong>DeepSeek-1.5B</strong>.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Are there any additional costs to using this plugin?</h3>
+          <p>You just buy it once, but you may incur charges from Hugging Face if you exceed their free API usage limits. Most small to medium-sized WordPress sites will stay within the free tier limits with normal usage patterns.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>How often should I run the analysis?</h3>
+          <p>We recommend running a full database analysis after:</p>
+          <ul>
+            <li>Major WordPress updates</li>
+            <li>Installing or removing several plugins</li>
+            <li>At least once every 3-6 months as regular maintenance</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="ai-analysis">
+        <h2>AI Analysis</h2>
+
+        <div class="ai-faq-item">
+          <h3>How accurate is the AI analysis?</h3>
+          <p>The AI analysis is highly accurate for identifying common WordPress plugin tables (80-95% accuracy). However, for custom or obscure plugins, the accuracy may be lower. Always review the AI recommendations carefully before taking action.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Why are some tables not identified?</h3>
+          <p>Some tables may not be identified for several reasons:</p>
+          <ul>
+            <li>Custom-built plugins with unique naming conventions</li>
+            <li>Tables created by developers without standard patterns</li>
+            <li>Very old plugin tables from discontinued plugins</li>
+            <li>Tables with generic names that don't follow standard conventions</li>
+          </ul>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>How does the plugin determine if a table is safe to delete?</h3>
+          <p>The safety assessment is based on several factors:</p>
+          <ul>
+            <li>Whether the table matches WordPress core tables</li>
+            <li>If the table is currently being used by active plugins</li>
+            <li>The presence of recent data modifications</li>
+            <li>Relationships with other database tables</li>
+            <li>Known patterns of essential plugin tables</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="security-and-privacy">
+        <h2>Security and Privacy</h2>
+
+        <div class="ai-faq-item">
+          <h3>Is my data secure when using DB Cleaner AI?</h3>
+          <p>Yes. DB Cleaner AI only sends table names (with prefixes removed) and column structures to the AI service. No actual data from your database is ever transmitted or analyzed. We take security seriously and follow WordPress best practices for all operations.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>What exactly is sent to the AI service?</h3>
+          <p>Only the following information is sent:</p>
+          <ul>
+            <li>Table names (with database prefix removed)</li>
+            <li>Column definitions (name, type, key information)</li>
+            <li>Active plugins name</li>
+          </ul>
+          <p>Here's an example of what might be sent:</p>
+          <pre><code>Table: posts
+Columns: 
+- ID (bigint, Primary Key)
+- post_author (bigint)
+- post_title (text)
+- post_content (longtext)
+...</code></pre>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Can I use DB Cleaner AI on sites with sensitive data?</h3>
+          <p>Yes. Since no actual table content is ever transmitted, the plugin is safe to use on sites containing sensitive or personal data. We comply with GDPR and other privacy regulations.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Does the plugin create backups before deletion?</h3>
+          <p>The plugin does not automatically create backups. We strongly recommend manually backing up your database before deleting any tables. You can use plugins like UpdraftPlus, BackWPup, or your hosting provider's backup tools.</p>
+        </div>
+      </section>
+
+      <section id="table-management">
+        <h2>Table Management</h2>
+
+        <div class="ai-faq-item">
+          <h3>Can I recover deleted tables?</h3>
+          <p>No. Once a table is deleted, it cannot be recovered unless you have a database backup. Always back up your database before performing any deletions.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Why are some tables marked as "Disabled-Undeletable"?</h3>
+          <p>Tables marked as undeletable include:</p>
+          <ul>
+            <li>WordPress core tables (wp_posts, wp_users, etc.)</li>
+            <li>Tables created by DB Cleaner AI itself (for logging purposes)</li>
+          </ul>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>What does the red border around some tables mean?</h3>
+          <p>Tables with a red border are identified as potentially critical tables that should not be deleted. These typically include:</p>
+          <ul>
+            <li>Tables containing essential plugin configuration</li>
+            <li>Tables storing user information or content</li>
+          </ul>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>What does the yellow border around some tables mean?</h3>
+          <p>Tables with a yellow border require caution before deletion. These are typically:</p>
+          <ul>
+            <li>Tables from plugins that may still be active</li>
+            <li>Tables that might have relationships with other active plugins</li>
+            <li>Tables where the AI has medium confidence in its assessment</li>
+          </ul>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Can I exclude tables from analysis?</h3>
+          <p>Currently, the plugin doesn't have an exclusion list feature. However, you can simply choose not to analyze certain tables by not selecting them in the interface.</p>
+        </div>
+      </section>
+
+      <section id="troubleshooting">
+        <h2>Troubleshooting</h2>
+
+        <div class="ai-faq-item">
+          <h3>The API connection test is failing</h3>
+          <p>Try these steps:</p>
+          <ol>
+            <li>Verify your API key is correct (no extra spaces)</li>
+            <li>Check your internet connection</li>
+            <li>Visit the <a href="https://status.huggingface.co/" target="_blank">Hugging Face status page</a> to verify their service is up</li>
+            <li>Try a different AI model</li>
+            <li>Check if your server firewall is blocking outbound requests</li>
+          </ol>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>The plugin is analyzing very slowly</h3>
+          <p>To improve analysis speed:</p>
+          <ol>
+            <li>Select fewer tables at once (5-10 maximum)</li>
+            <li>Choose a smaller/faster AI model like Gemma-2-2B</li>
+            <li>Check your server resources (CPU, memory)</li>
+            <li>Increase PHP memory limit if possible</li>
+            <li>Try during off-peak hours when your server has more resources available</li>
+          </ol>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>I deleted a table and now my site has errors</h3>
+          <p>If you're experiencing issues after deleting a table:</p>
+          <ol>
+            <li>Restore from a backup immediately if available</li>
+            <li>Check your WordPress error logs for specific errors</li>
+            <li>Contact our support team with details about the deleted table and the errors you're seeing</li>
+          </ol>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>The plugin seems to be using a lot of server resources</h3>
+          <p>AI analysis can be resource-intensive. To minimize impact:</p>
+          <ol>
+            <li>Analyze fewer tables at once</li>
+            <li>Use smaller AI models</li>
+            <li>Schedule analysis during low-traffic periods</li>
+            <li>Consider upgrading your hosting if you have limited resources</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="technical-questions">
+        <h2>Technical Questions</h2>
+
+        <div class="ai-faq-item">
+          <h3>How does the plugin handle multisite installations?</h3>
+          <p>On multisite installations, DB Cleaner AI will:</p>
+          <ul>
+            <li>Show tables specific to each subsite when accessed from that subsite's admin</li>
+            <li>Show all network tables when accessed from the network admin</li>
+            <li>Keep separate logs for each subsite</li>
+            <li>Respect network administrative boundaries</li>
+          </ul>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Can I exclude certain tables from analysis?</h3>
+          <p>Currently, there's no built-in exclusion list, but we're planning to add this feature in a future update. For now, you can simply avoid selecting tables you don't want to analyze.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Does the plugin work with custom table prefixes?</h3>
+          <p>Yes. DB Cleaner AI automatically detects and works with custom table prefixes, ensuring proper identification and analysis regardless of your prefix setting.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>How much server resource does the analysis process use?</h3>
+          <p>The analysis process primarily uses API calls to external AI services, so the local resource usage is minimal. However, preparing large amounts of table data for analysis can temporarily increase memory usage. If you have a large database (100+ tables), consider analyzing in smaller batches.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>What happens if my API key expires?</h3>
+          <p>If your API key expires or becomes invalid, the plugin will display an error message when you attempt to perform an analysis. Simply generate a new API key and update it in the settings.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Can I export the analysis results?</h3>
+          <p>Currently, the plugin doesn't have a built-in export feature, but we're planning to add CSV/PDF exports in a future update. For now, you can use browser print functions or screenshots to save analysis results.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>How does DB Cleaner AI handle tables with foreign key relationships?</h3>
+          <p>The AI analysis attempts to identify relationships between tables, including foreign key constraints. When such relationships are detected, the plugin will recommend caution if deleting one table might affect others.</p>
+        </div>
+
+        <div class="ai-faq-item">
+          <h3>Can I schedule automatic analyses?</h3>
+          <p>Currently, the plugin doesn't support scheduled analyses, but this feature is on our roadmap for future releases. For now, all analyses must be manually triggered.</p>
+        </div>
+      </section>
+
+      <div class="ai-alert ai-alert-info">
+        <p>
+          <strong>Need more help?</strong> If you have a question not covered here, please contact our support team at <a href="mailto:sadeq.yaqobi9219@gmail.com">sadeq.yaqobi9219@gmail.com</a>.
+        </p>
+      </div>
+    </main>
+    <!-- Footer Section -->
+    <footer class="ai-main-footer">
+      <div class="ai-footer-container">
+        <div class="ai-footer-brand">
+          <div class="ai-footer-logo">
+            <img src="assets/img/logo.svg" alt="DB Cleaner AI Logo" />
+            <span class="ai-footer-logo-text">DB Cleaner AI</span>
+          </div>
+          <p class="ai-footer-tagline">
+            Intelligent WordPress database optimization
+          </p>
+        </div>
+
+        <div class="ai-footer-links">
+          <div class="ai-footer-links-column">
+            <h3 style="margin-top: 0;">Product</h3>
+            <ul>
+              <li><a href="">Buy Now</a></li>
+              <li><a href="">Pricing</a></li>
+            </ul>
+          </div>
+
+          <div class="ai-footer-links-column">
+            <h3 style="margin-top: 0;">Resources</h3>
+            <ul>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-footer-bottom">
+        <div class="ai-footer-legal">
+          <span>&copy; 2025 DB Cleaner AI. All rights reserved.</span>
+          <div class="ai-footer-legal-links">
+            <a href="https://github.com/sadeq-yaqobi" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#dcdcdc"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-github"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                ></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/sadeq-yaqobi" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#dcdcdc"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-linkedin"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <nav class="ai-header-nav-sticky ai-hidden"> 
+      <a href="index.html">Home</a>
+      <a href="documentation.html">Documentation</a> 
+      <a href="faq.html" class="active-sticky">FAQ</a>
+      <a href="#" class="ai-buy-btn-sticky">Buy Now</a> 
+    </nav>
+
+    <!-- jQuery CDN (latest stable version) -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
